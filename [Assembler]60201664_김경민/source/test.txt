@@ -1,0 +1,29 @@
+.program 
+	test
+.header
+	stack 1024
+	heap 1024
+.data
+	sum 4
+	average 4
+	i 4
+	max 4
+.code
+	move sum 0
+	move average 0
+	move i 0
+	move max 11
+	startLoop:
+		cmp i max
+		ge exitLoop
+		move r0 sum
+		add r0 i
+		move sum r0
+		move r1 i
+		add r1 1
+		move i r1
+		jump startLoop
+	exitLoop:
+	move r0 sum
+	halt
+.end
